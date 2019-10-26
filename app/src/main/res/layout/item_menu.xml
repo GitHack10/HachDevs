@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:background="@drawable/card_background">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/itemMenuText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.91"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/itemMenuNextImage"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Уроки" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/itemMenuNextImage"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.09"
+        android:src="@drawable/ic_arrow_right"
+        android:layout_gravity="end"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</LinearLayout>

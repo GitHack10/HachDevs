@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorMain"
+    tools:context=".presentation.screens.home.ui.HomeFragment">
+
+    <include
+        android:id="@+id/profileTeacherToolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:id="@+id/homeScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileTeacherToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/userLogoImage"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:src="@drawable/logo_human"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/userFirstNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/panton_bold"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/userLogoImage"
+                app:layout_constraintTop_toTopOf="@+id/userLogoImage"
+                tools:text="Карахан" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/userMiddleNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/panton_bold"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/userLogoImage"
+                app:layout_constraintStart_toEndOf="@+id/userLogoImage"
+                app:layout_constraintTop_toBottomOf="@+id/userFirstNameText"
+                tools:text="Якубович" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/infoCardsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                app:layout_constraintTop_toBottomOf="@+id/userLogoImage">
+
+                <!-- Всего студентов Начало -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/countStudentsTitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/panton_normal"
+                    android:text="Всего"
+                    android:textColor="@color/textDesc"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <RelativeLayout
+                    android:id="@+id/studentsCountContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/card_background"
+                    android:padding="12dp"
+                    app:layout_constraintEnd_toStartOf="@+id/pointsCountContainer"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/countStudentsTitleText">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/countStudentsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/panton_bold"
+                        android:text="200"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="24sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/addStudentsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/countStudentsText"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_toEndOf="@+id/countStudentsText"
+                        android:fontFamily="@font/panton_bold"
+                        android:text="+1"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="14sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/countStudentsDescText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="48dp"
+                        android:fontFamily="@font/panton_normal"
+                        android:text="учеников"
+                        android:textColor="@color/textDesc"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </RelativeLayout>
+                <!-- Всего студентов Конец -->
+
+                <!-- Средний балл студентов Начало -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/pointsStudentsTitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="48dp"
+                    android:fontFamily="@font/panton_normal"
+                    android:text="Баллы"
+                    android:textColor="@color/textDesc"
+                    android:textSize="14sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/countStudentsTitleText"
+                    app:layout_constraintStart_toStartOf="@id/pointsCountContainer" />
+
+                <RelativeLayout
+                    android:id="@+id/pointsCountContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_background"
+                    android:padding="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/studentsCountContainer"
+                    app:layout_constraintTop_toTopOf="@+id/studentsCountContainer">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/pointsStudentsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/panton_bold"
+                        android:text="4.5 / 5"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="24sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/pointsStudentsDescText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="48dp"
+                        android:fontFamily="@font/panton_normal"
+                        android:text="средний балл"
+                        android:textColor="@color/textDesc"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </RelativeLayout>
+                <!-- Средний балл студентов Конец -->
+
+                <!-- Отстают Начало -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/behindStudentsTitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/panton_normal"
+                    android:text="Отстают"
+                    android:textColor="@color/textDesc"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/pointsCountContainer" />
+
+                <RelativeLayout
+                    android:id="@+id/behindContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/card_background"
+                    android:padding="12dp"
+                    app:layout_constraintEnd_toStartOf="@+id/testsContainer"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/behindStudentsTitleText">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/behindStudentsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/panton_bold"
+                        android:text="15"
+                        android:textColor="@color/colorCoral"
+                        android:textSize="24sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/behindStudentsDescText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="48dp"
+                        android:fontFamily="@font/panton_normal"
+                        android:text="учеников"
+                        android:textColor="@color/textDesc"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </RelativeLayout>
+                <!-- Отстают Конец -->
+
+                <!-- Контрольные Начало -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/testsTitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="48dp"
+                    android:fontFamily="@font/panton_normal"
+                    android:text="Контрольные"
+                    android:textColor="@color/textDesc"
+                    android:textSize="14sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/behindStudentsTitleText"
+                    app:layout_constraintStart_toStartOf="@id/testsContainer" />
+
+                <RelativeLayout
+                    android:id="@+id/testsContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_background"
+                    android:padding="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/behindContainer"
+                    app:layout_constraintTop_toTopOf="@+id/behindContainer">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/testsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/panton_bold"
+                        android:text="21 / 50"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="24sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/testsDescText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="48dp"
+                        android:fontFamily="@font/panton_normal"
+                        android:text="проведено"
+                        android:textColor="@color/textDesc"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </RelativeLayout>
+                <!-- Контрольные Конец -->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <include
+                android:id="@+id/lessonsItem"
+                layout="@layout/item_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/infoCardsContainer"/>
+
+            <include
+                android:id="@+id/testsItem"
+                layout="@layout/item_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lessonsItem"/>
+
+            <include
+                android:id="@+id/performanceItem"
+                layout="@layout/item_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/testsItem"/>
+
+            <include
+                android:id="@+id/rewardsItem"
+                layout="@layout/item_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/performanceItem"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorMain"
+    tools:context=".presentation.screens.home.ui.HomeFragment">
+
+    <include
+        android:id="@+id/authToolbar"
+        layout="@layout/toolbar" />
+
+    <ImageView
+        android:id="@+id/authImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/image_auth"
+        app:layout_constraintTop_toBottomOf="@+id/authToolbar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/authTypeText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/panton_bold"
+        android:textColor="@color/colorWhite"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@+id/authImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Учитель"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/loginEdit"
+        style="@style/InputFieldEdit.Empty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_edittext_empty"
+        android:hint="Логин"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/authTypeText"
+        app:layout_constraintStart_toStartOf="@id/authTypeText"
+        app:layout_constraintEnd_toEndOf="@id/authTypeText" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/passwordEdit"
+        style="@style/InputFieldEdit.Empty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Пароль"
+        android:inputType="textPassword"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/loginEdit"
+        app:layout_constraintStart_toStartOf="@id/authTypeText"
+        app:layout_constraintEnd_toEndOf="@id/authTypeText"/>
+
+    <Button
+        android:id="@+id/signInButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/button_good_deed"
+        android:fontFamily="@font/panton_bold"
+        android:text="Войти"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEdit"
+        app:layout_constraintStart_toStartOf="@id/authTypeText"
+        app:layout_constraintEnd_toEndOf="@id/authTypeText"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/infoGoodDeedsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:padding="8dp"
+        android:gravity="center"
+        android:drawableStart="@drawable/ic_help"
+        android:drawablePadding="12dp"
+        android:fontFamily="@font/panton_bold"
+        android:text="Подробнее о системе School Buddy"
+        android:textColor="@color/colorWhite"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

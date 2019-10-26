@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorMain"
+    tools:context=".presentation.screens.home.ui.HomeFragment">
+
+    <include
+        android:id="@+id/homeToolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:id="@+id/homeScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/helpText"
+        app:layout_constraintTop_toBottomOf="@+id/homeToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/welcomeImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/image_welcome"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/colorWhite"
+                app:layout_constraintBottom_toBottomOf="@id/signInUsText"
+                app:layout_constraintEnd_toStartOf="@+id/signInUsText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/signInUsText" />
+
+            <TextView
+                android:id="@+id/signInUsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="46dp"
+                android:fontFamily="@font/panton_bold"
+                android:text="Войти как"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/welcomeImage" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:background="@color/colorWhite"
+                app:layout_constraintBottom_toBottomOf="@id/signInUsText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/signInUsText"
+                app:layout_constraintTop_toTopOf="@id/signInUsText" />
+
+            <Button
+                android:id="@+id/studentButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/button_good_deed"
+                android:fontFamily="@font/panton_bold"
+                android:text="Ученик"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/signInUsText" />
+
+            <Button
+                android:id="@+id/teacherButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/button_good_deed"
+                android:fontFamily="@font/panton_bold"
+                android:text="Учитель"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/studentButton" />
+
+            <Button
+                android:id="@+id/parentButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/button_good_deed"
+                android:fontFamily="@font/panton_bold"
+                android:text="Родитель"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/teacherButton" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/helpText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:drawableStart="@drawable/ic_help"
+        android:drawablePadding="12dp"
+        android:fontFamily="@font/panton_bold"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="Подробнее о системе School Buddy"
+        android:textColor="@color/colorWhite"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
