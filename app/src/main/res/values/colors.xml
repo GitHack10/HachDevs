@@ -2,5 +2,16 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#13A5B7</color>
+    <color name="colorMain">#2A3960</color>
+    <color name="colorCoral">#FF7669</color>
+    <color name="colorBlue">#00CFC1</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="alertDialog">#405898</color>
+
+    <color name="textHint">#52FFFFFF</color>
+    <color name="textDesc">#A3FFFFFF</color>
+
+    <color name="cardBackground">#0AFFFFFF</color>
+    <color name="buttonDisable">#5200CFC1</color>
 </resources>

@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">HachProject</string>
+
+    <string name="action_yes">Да</string>
+    <string name="action_no">Нет</string>
+    <string name="action_ok">Ок</string>
+    <string name="action_cancel">Отмена</string>
+    <string name="action_go">Перейти</string>
+    <string name="action_connect">Подключить</string>
+    <string name="action_save">Сохранить</string>
+    <string name="action_try_again">Попробовать снова</string>
+    <string name="action_download_complete">Загрузка завершена</string>
+
+    <!-- Profile Screen-->
+    <string name="profile_logout">Выход</string>
+    <string name="profile_logout_message">Вы уверены что хотите выйти?</string>
 </resources>
