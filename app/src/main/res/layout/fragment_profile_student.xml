@@ -8,7 +8,7 @@
     tools:context=".presentation.screens.home.ui.HomeFragment">
 
     <include
-        android:id="@+id/homeToolbar"
+        android:id="@+id/profileStudentToolbar"
         layout="@layout/toolbar" />
 
     <ScrollView
@@ -17,13 +17,13 @@
         android:layout_height="0dp"
         android:fillViewport="true"
         android:orientation="vertical"
-        android:padding="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/homeButtonContainer"
-        app:layout_constraintTop_toBottomOf="@+id/homeToolbar">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileStudentToolbar">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="16dp"
             android:orientation="vertical">
 
             <ru.diitcenter.gooddeeds.presentation.screens.main.ui.MyProgressBar
@@ -113,116 +113,73 @@
 
             </com.hachdevs.schoolbuddy.presentation.global.views.AnimatingRelativeLayout>
 
-            <LinearLayout
-                android:id="@+id/deedsContainer"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/aboutMeText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:gravity="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/circle_progress">
+                android:fontFamily="@font/panton_normal"
+                android:text="обо мне"
+                android:textColor="@color/textDesc"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/circle_progress" />
 
-                <RelativeLayout
-                    android:id="@+id/badDeedsContainer"
-                    android:layout_width="163dp"
-                    android:layout_height="70dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/second_background">
+            <LinearLayout
+                android:id="@+id/aboutMeContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/card_background"
+                android:orientation="vertical"
+                android:padding="20sp"
+                app:layout_constraintTop_toBottomOf="@+id/aboutMeText">
 
-                    <TextView
-                        android:id="@+id/count_bad_deeds"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginTop="11dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="16dp"
+                        android:src="@drawable/ic_human_card" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/userNameText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:fontFamily="@font/panton_bold"
-                        android:text="2"
+                        android:text="Джанаев Магомедрасул Магомедович"
                         android:textColor="@color/colorWhite"
-                        android:textSize="24sp" />
+                        android:textSize="18sp" />
+                </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/textView2"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginBottom="12dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="16dp"
+                        android:src="@drawable/ic_book" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/schoolNameText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:fontFamily="@font/panton_bold"
-                        android:text="плохих дела"
-                        android:textColor="#A3FFFFFF"
-                        android:textSize="14sp" />
-
-                    <ImageView
-                        android:id="@+id/imageView3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginEnd="12dp"
-                        android:src="@drawable/ic_bad_deed" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="163dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/second_background">
-
-                    <TextView
-                        android:id="@+id/count_good_deeds"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginTop="11dp"
-                        android:fontFamily="@font/panton_bold"
-                        android:text="2"
+                        android:text="СОШ №10 класс 11 Г"
                         android:textColor="@color/colorWhite"
-                        android:textSize="24sp" />
-
-                    <TextView
-                        android:id="@+id/count_good_deeds_need"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginStart="2dp"
-                        android:layout_marginTop="19dp"
-                        android:layout_toEndOf="@+id/count_good_deeds"
-                        android:fontFamily="@font/panton_bold"
-                        android:text="/8"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/good_deeds"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginBottom="12dp"
-                        android:fontFamily="@font/panton_bold"
-                        android:text="хороших дела"
-                        android:textColor="#A3FFFFFF"
-                        android:textSize="14sp" />
-
-                    <ImageView
-                        android:id="@+id/up_good"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginEnd="12dp"
-                        android:src="@drawable/ic_good_deed" />
-                </RelativeLayout>
+                        android:textSize="18sp" />
+                </LinearLayout>
             </LinearLayout>
 
             <RelativeLayout
@@ -234,7 +191,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.213"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/deedsContainer">
+                app:layout_constraintTop_toBottomOf="@+id/aboutMeContainer">
 
 
                 <TextView
@@ -308,61 +265,32 @@
                     android:progressDrawable="@drawable/progress_horizontal" />
             </RelativeLayout>
 
-            <TextView
-                android:id="@+id/infoGoodDeedsText"
-                android:layout_width="wrap_content"
+            <include
+                android:id="@+id/subjectsItem"
+                layout="@layout/item_menu"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:drawableStart="@drawable/ic_help"
-                android:drawablePadding="12dp"
-                android:fontFamily="@font/panton_bold"
-                android:text="О хороших и плохих делах"
-                android:textColor="@color/colorWhite"
-                android:textSize="14sp"
-                app:layout_constraintTop_toBottomOf="@id/deedsProgressContainer"
+                android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@+id/deedsProgressContainer"/>
+
+            <include
+                android:id="@+id/performanceItem"
+                layout="@layout/item_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/subjectsItem"/>
+
+            <include
+                android:id="@+id/progressStudentItem"
+                layout="@layout/item_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/performanceItem"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-    <LinearLayout
-        android:id="@+id/homeButtonContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="2dp"
-            android:layout_weight="1"
-            android:background="@drawable/button_bad_deed"
-            android:drawableStart="@drawable/ic_done"
-            android:drawablePadding="18dp"
-            android:gravity="start|center"
-            android:padding="12dp"
-            android:text="Плохое"
-            android:textAllCaps="false"
-            android:textColor="@color/colorWhite"
-            android:textSize="20sp" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
-            android:layout_weight="1"
-            android:background="@drawable/button_good_deed"
-            android:drawableStart="@drawable/ic_up"
-            android:drawablePadding="18dp"
-            android:fontFamily="@font/panton_bold"
-            android:gravity="start|center"
-            android:padding="12dp"
-            android:text="Хорошее"
-            android:textAllCaps="false"
-            android:textColor="@color/colorWhite"
-            android:textSize="20sp" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

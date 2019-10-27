@@ -12,7 +12,16 @@ class PrefsHelper(private val sharedPrefs: SharedPreferences) {
 
     fun getIsLogin() = sharedPrefs.getBoolean(PREF_IS_LOGIN, false)
 
+    fun setLoginType(authType: String?) {
+        sharedPrefs.edit()
+            .putString(PREF_LOGIN_TYPE, authType)
+            .apply()
+    }
+
+    fun getLoginType() = sharedPrefs.getString(PREF_LOGIN_TYPE, null)
+
     companion object {
-        const val PREF_IS_LOGIN = "is login"
+        const val PREF_IS_LOGIN = "is_login"
+        const val PREF_LOGIN_TYPE = "login_type"
     }
 }

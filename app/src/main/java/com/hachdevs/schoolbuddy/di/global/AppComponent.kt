@@ -8,6 +8,7 @@ import com.hachdevs.schoolbuddy.di.global.modules.PrefsModule
 import com.hachdevs.schoolbuddy.di.screens.auth.AuthComponent
 import com.hachdevs.schoolbuddy.di.screens.home.HomeComponent
 import com.hachdevs.schoolbuddy.di.screens.main.MainComponent
+import com.hachdevs.schoolbuddy.di.screens.profiles.student.ProfileStudentComponent
 import com.hachdevs.schoolbuddy.di.screens.profiles.teacher.ProfileTeacherComponent
 import dagger.BindsInstance
 import dagger.Component
@@ -28,6 +29,7 @@ interface AppComponent {
     fun homeComponentBuilder(): HomeComponent.Builder
     fun authComponentBuilder(): AuthComponent.Builder
     fun profileTeacherComponentBuilder(): ProfileTeacherComponent.Builder
+    fun profileStudentComponentBuilder(): ProfileStudentComponent.Builder
 
     @Component.Builder
     interface Builder {

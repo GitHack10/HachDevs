@@ -2,6 +2,7 @@ package com.hachdevs.schoolbuddy.presentation.screens.main.mvp
 
 import com.arellomobile.mvp.InjectViewState
 import com.hachdevs.schoolbuddy.data.global.DataManager
+import com.hachdevs.schoolbuddy.domain.global.common.AuthType
 import com.hachdevs.schoolbuddy.presentation.global.Screens
 import com.hachdevs.schoolbuddy.presentation.global.base.BasePresenter
 import ru.terrakok.cicerone.Router
@@ -16,7 +17,13 @@ class MainPresenter @Inject constructor(
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
         when {
-            dataManager.isLogin() -> router.replaceScreen(Screens.ProfileTeacher)
+            dataManager.isLogin() && dataManager.getLoginType() == AuthType.teacher.type -> {
+                router.replaceScreen(Screens.ProfileTeacher)
+            }
+            dataManager.isLogin() && dataManager.getLoginType() == AuthType.student.type -> {
+                router.replaceScreen(Screens.ProfileStudent)
+            }
+
             else -> router.replaceScreen(Screens.Welcome)
         }
     }

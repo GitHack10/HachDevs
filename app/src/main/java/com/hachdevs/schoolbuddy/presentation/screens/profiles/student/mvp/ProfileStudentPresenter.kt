@@ -1,4 +1,4 @@
-package com.hachdevs.schoolbuddy.presentation.screens.profiles.teacher.mvp
+package com.hachdevs.schoolbuddy.presentation.screens.profiles.student.mvp
 
 import com.arellomobile.mvp.InjectViewState
 import com.hachdevs.schoolbuddy.data.global.DataManager
@@ -8,10 +8,10 @@ import ru.terrakok.cicerone.Router
 import javax.inject.Inject
 
 @InjectViewState
-class ProfileTeacherPresenter @Inject constructor(
+class ProfileStudentPresenter @Inject constructor(
     private val router: Router,
     private val dataManager: DataManager
-) : BasePresenter<ProfileTeacherView>(router) {
+) : BasePresenter<ProfileStudentView>(router) {
 
     fun onLogoutClicked() {
         dataManager.setIsLogin(false)

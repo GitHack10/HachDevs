@@ -8,6 +8,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
+import com.hachdevs.schoolbuddy.App
 import com.hachdevs.schoolbuddy.R
 import com.hachdevs.schoolbuddy.domain.global.common.AuthType
 import com.hachdevs.schoolbuddy.presentation.global.base.BaseFragment
@@ -41,7 +42,7 @@ class AuthFragment : BaseFragment(), AuthView, View.OnClickListener {
     private var authType: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        com.hachdevs.schoolbuddy.App.appComponent.authComponentBuilder().build().inject(this)
+        App.appComponent.authComponentBuilder().build().inject(this)
 
         (this as Fragment).arguments?.let {
             authType = it.getString(AUTH_TYPE, "")
@@ -56,7 +57,11 @@ class AuthFragment : BaseFragment(), AuthView, View.OnClickListener {
 
     override fun onClick(view: View?) {
         when (view?.id) {
-            R.id.signInButton -> presenter.onSignInClicked(loginEdit.text.toString(), passwordEdit.text.toString())
+            R.id.signInButton -> presenter.onSignInClicked(
+                login = loginEdit.text.toString(),
+                password = passwordEdit.text.toString(),
+                authType = authType
+            )
         }
     }
 

@@ -27,12 +27,14 @@ abstract class BaseFragment : MvpAppCompatFragment() {
         super.onDestroyView()
     }
 
-    protected fun setupToolbar(title: String, showNavIcon: Boolean = false) {
+    protected fun setupToolbar(title: String, showNavIcon: Boolean = false, icon: Int = R.drawable.ic_back) {
         val toolbar: Toolbar? = findOptional(R.id.toolbar)
         toolbar?.run {
             if (showNavIcon) {
-                setNavigationIcon(R.drawable.ic_back)
-                setNavigationOnClickListener { onBackPressed() }
+                setNavigationIcon(icon)
+                setNavigationOnClickListener {
+                    if (icon == R.drawable.ic_back) onBackPressed()
+                }
                 navIconPlaceholder.isVisible = false
             }
             titleText.text = title
