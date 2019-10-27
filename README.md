@@ -1,6 +1,6 @@
 # SchoollBuddy
 
-##About
+## About
 
 <text>
  
