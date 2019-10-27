@@ -2,7 +2,11 @@
 
  
 ## Figma design : 
-https://www.figma.com/file/qVLg6LngJ4VL7SqiekWr8C/School-Buddy?node-id=0%3A6168
+https://www.figma.com/proto/qVLg6LngJ4VL7SqiekWr8C/School-Buddy?node-id=23%3A0&scaling=scale-down
+
+## Link to the presentation.
+https://drive.google.com/drive/folders/1vMRpY8oPBi63_NYjYuRgijZvIMYjLdKl?usp=sharing
+
 
 
 ## Demonstration
