@@ -63,7 +63,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 app:layout_constraintCircle="@+id/person_image"
-                app:layout_constraintCircleAngle="160"
+                app:layout_constraintCircleAngle="200"
                 app:layout_constraintCircleRadius="105dp"
                 tools:ignore="MissingConstraints" />
 
@@ -277,7 +277,7 @@
                     android:layout_marginBottom="39dp"
                     android:layout_toEndOf="@+id/icon_level_2"
                     android:fontFamily="@font/panton_bold"
-                    android:text="Осталось сделать 380 добрых дел, чтобы получить Уровень II"
+                    android:text="Осталось заработать 380 xp, чтобы получить Уровень II"
                     android:textColor="@color/colorWhite"
                     android:textSize="14sp" />
 

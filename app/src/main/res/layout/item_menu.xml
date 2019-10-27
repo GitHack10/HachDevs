@@ -8,7 +8,7 @@
     android:paddingBottom="16dp"
     android:paddingStart="20dp"
     android:paddingEnd="20dp"
-    android:background="@drawable/card_background">
+    android:background="@drawable/background_card">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/itemMenuText"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorMain"
-    tools:context=".presentation.screens.home.ui.HomeFragment">
+    tools:context=".presentation.screens.theme.ui.ThemeFragment">
 
     <include
         android:id="@+id/profileStudentToolbar"
@@ -114,174 +114,131 @@
             </com.hachdevs.schoolbuddy.presentation.global.views.AnimatingRelativeLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/aboutMeText"
+                android:id="@+id/userNameText"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:fontFamily="@font/panton_bold"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                android:text="Джанаев Магомедрасул"
+                app:layout_constraintTop_toBottomOf="@+id/circle_progress"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/undevelopedTopicsTitleText"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:fontFamily="@font/panton_normal"
-                android:text="обо мне"
+                android:text="надо повторить"
                 android:textColor="@color/textDesc"
                 android:textSize="14sp"
-                app:layout_constraintTop_toBottomOf="@+id/circle_progress" />
-
-            <LinearLayout
-                android:id="@+id/aboutMeContainer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/background_card"
-                android:orientation="vertical"
-                android:padding="20sp"
-                app:layout_constraintTop_toBottomOf="@+id/aboutMeText">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:orientation="horizontal">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:layout_marginEnd="16dp"
-                        android:src="@drawable/ic_human_card" />
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/userNameText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/panton_bold"
-                        android:text="Джанаев Магомедрасул Магомедович"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="16dp"
-                    android:orientation="horizontal">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:layout_marginEnd="16dp"
-                        android:src="@drawable/ic_book" />
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/schoolNameText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/panton_bold"
-                        android:text="СОШ №10 класс 11 Г"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="18sp" />
-                </LinearLayout>
-            </LinearLayout>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userNameText"/>
 
             <RelativeLayout
-                android:id="@+id/deedsProgressContainer"
+                android:id="@+id/undevelopedTopicsContainer"
                 android:layout_width="0dp"
-                android:layout_height="92dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/second_background"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.213"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/background_card"
+                android:padding="12dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/aboutMeContainer">
+                app:layout_constraintEnd_toStartOf="@+id/passedTestsContainer"
+                app:layout_constraintTop_toBottomOf="@+id/undevelopedTopicsTitleText">
 
-
-                <TextView
-                    android:id="@+id/count_all_need_need_good_deeds"
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/undevelopedTopicsText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginEnd="12dp"
-                    android:layout_marginBottom="12dp"
                     android:fontFamily="@font/panton_bold"
-                    android:text="/ 5000"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="12sp" />
+                    android:text="2"
+                    android:textColor="@color/colorCoral"
+                    android:textSize="24sp" />
 
-                <TextView
-                    android:id="@+id/count_all_good_deeds"
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/undevelopedTopicsDescText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="2dp"
-                    android:layout_marginBottom="12dp"
-                    android:layout_toStartOf="@+id/count_all_need_need_good_deeds"
-                    android:fontFamily="@font/panton_bold"
-                    android:text="4 620"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="12sp" />
+                    android:layout_marginTop="48dp"
+                    android:fontFamily="@font/panton_normal"
+                    android:text="неусвоенные темы"
+                    android:textColor="@color/textDesc"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/info"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_marginBottom="39dp"
-                    android:layout_toEndOf="@+id/icon_level_2"
-                    android:fontFamily="@font/panton_bold"
-                    android:text="Осталось заработать 380 xp, чтобы получить Уровень II"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="14sp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/passedTestsTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/panton_normal"
+                android:text="надо повторить"
+                android:textColor="@color/textDesc"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/passedTestsContainer"
+                app:layout_constraintBaseline_toBaselineOf="@id/undevelopedTopicsTitleText"/>
 
-                <ImageView
-                    android:id="@+id/icon_level_2"
+            <RelativeLayout
+                android:id="@+id/passedTestsContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/background_card"
+                android:padding="12dp"
+                app:layout_constraintStart_toEndOf="@+id/undevelopedTopicsContainer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/passedTestsTitleText">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/passedTestsStudentsText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="12dp"
-                    android:src="@drawable/ic_level_2" />
+                    android:fontFamily="@font/panton_bold"
+                    android:text="1/5"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="24sp" />
 
-                <ProgressBar
-                    android:id="@+id/progressBar"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="85dp"
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/passedTestsStudentsDescText"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignEnd="@+id/count_all_need_need_good_deeds"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginEnd="100dp"
-                    android:layout_marginBottom="11dp"
-                    android:max="5000"
-                    android:outlineAmbientShadowColor="@color/colorBlue"
-                    android:progress="4000"
-                    android:progressDrawable="@drawable/progress_horizontal" />
+                    android:layout_marginTop="48dp"
+                    android:fontFamily="@font/panton_normal"
+                    android:textColor="@color/textDesc"
+                    android:textSize="14sp"
+                    android:text="сдано тестов"
+                    app:layout_constraintStart_toStartOf="parent" />
             </RelativeLayout>
 
             <include
-                android:id="@+id/subjectsItem"
+                android:id="@+id/lessonsStudentItem"
                 layout="@layout/item_menu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/deedsProgressContainer"/>
+                app:layout_constraintTop_toBottomOf="@+id/undevelopedTopicsContainer"/>
 
             <include
-                android:id="@+id/performanceItem"
+                android:id="@+id/testsStudentItem"
                 layout="@layout/item_menu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/subjectsItem"/>
+                app:layout_constraintTop_toBottomOf="@+id/lessonsStudentItem"/>
+
+            <include
+                android:id="@+id/performanceStudentItem"
+                layout="@layout/item_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/testsStudentItem"/>
 
             <include
                 android:id="@+id/progressStudentItem"
@@ -290,7 +247,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/performanceItem"/>
+                app:layout_constraintTop_toBottomOf="@+id/performanceStudentItem"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

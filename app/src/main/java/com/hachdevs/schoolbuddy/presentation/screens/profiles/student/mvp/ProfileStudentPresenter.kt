@@ -20,4 +20,6 @@ class ProfileStudentPresenter @Inject constructor(
     }
 
     fun onNotificationsClicked() { }
+
+    fun onSubjectsItemClicked() = router.navigateTo(Screens.StudentThemes)
 }

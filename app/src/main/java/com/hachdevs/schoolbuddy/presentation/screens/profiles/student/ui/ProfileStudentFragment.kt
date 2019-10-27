@@ -49,7 +49,7 @@ class ProfileStudentFragment : BaseFragment(), ProfileStudentView, View.OnClickL
 
     override fun onClick(view: View?) {
         when (view?.id) {
-
+            R.id.subjectsItem -> presenter.onSubjectsItemClicked()
         }
     }
 
@@ -69,6 +69,8 @@ class ProfileStudentFragment : BaseFragment(), ProfileStudentView, View.OnClickL
 
         nameText.text = DEFAULT_USER_NAME
         schoolText.text = DEFAULT_SCHOOL_NAME
+
+        view.subjectsItem.setOnClickListener(this)
 
         init()
     }
